@@ -56,7 +56,7 @@ export default function GebaeudetechnikDetailPage({
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-green-dark/90 to-brand-green-dark/70" />
         <Image
-          src="/logo.santec.png"
+          src="/logo.santec.webp"
           alt="Santec Group"
           width={160}
           height={48}

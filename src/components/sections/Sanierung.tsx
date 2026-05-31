@@ -16,7 +16,7 @@ export function Sanierung() {
       className="relative min-h-screen overflow-hidden bg-brand-red-dark lg:min-h-0"
     >
       <Image
-        src="/asbest-santecgroup.png"
+        src="/asbest-santecgroup.webp"
         alt=""
         fill
         quality={85}

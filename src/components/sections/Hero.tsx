@@ -12,7 +12,7 @@ export function Hero() {
       className="relative min-h-screen overflow-hidden bg-bg lg:min-h-[640px]"
     >
       <Image
-        src="/gebaeudetechnik.png"
+        src="/gebaeudetechnik.webp"
         alt="Santec Group – Gebäudetechnik"
         fill
         priority

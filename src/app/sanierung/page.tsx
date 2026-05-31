@@ -138,7 +138,7 @@ export default function SanierungOverviewPage() {
       {/* hero */}
       <div className="relative overflow-hidden bg-brand-red-dark">
         <Image
-          src="/asbest-santecgroup.png"
+          src="/asbest-santecgroup.webp"
           alt=""
           fill
           quality={85}
@@ -147,7 +147,7 @@ export default function SanierungOverviewPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-red-dark/90 to-brand-red-dark/70" />
         <Image
-          src="/logo.santec.png"
+          src="/logo.santec.webp"
           alt="Santec Group"
           width={160}
           height={48}

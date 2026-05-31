@@ -14,7 +14,7 @@ export function Gebaeudetechnik() {
   return (
     <section id="gebaeudetechnik" className="relative min-h-screen overflow-hidden bg-brand-green-dark lg:min-h-0">
       <Image
-        src="/klima.santecgroup.png"
+        src="/klima.santecgroup.webp"
         alt=""
         fill
         quality={85}

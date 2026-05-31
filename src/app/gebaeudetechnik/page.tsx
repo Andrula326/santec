@@ -61,7 +61,7 @@ export default function GebaeudetechnikOverviewPage() {
       {/* hero */}
       <div className="relative bg-brand-green-dark">
         <Image
-          src="/logo.santec.png"
+          src="/logo.santec.webp"
           alt="Santec Group"
           width={160}
           height={48}
