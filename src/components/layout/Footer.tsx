@@ -67,9 +67,20 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-3 px-5 py-5 text-xs text-white/50 md:flex-row md:items-center md:px-8">
           <span>© {year} {company.name} – {t.footer.rights}</span>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a href="/impressum" className="hover:text-white">{t.footer.impressum}</a>
             <a href="/datenschutz" className="hover:text-white">{t.footer.datenschutz}</a>
+            <span className="text-white/40">
+              Made by{' '}
+              <a
+                href="https://andrzejmich.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white"
+              >
+                Andrzej Mich
+              </a>
+            </span>
           </div>
         </div>
       </div>
