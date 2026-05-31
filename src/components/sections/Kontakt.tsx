@@ -16,7 +16,15 @@ export function Kontakt() {
   const [status, setStatus] = useState<Status>('idle');
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [captchaKey, setCaptchaKey] = useState(0);
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+
+  // Lazy-load reCAPTCHA only after the user starts interacting with the form.
+  // This avoids loading ~1.1 MB of gstatic JS on initial page render and
+  // significantly improves LCP / Total Blocking Time.
+  function activateRecaptcha() {
+    if (!recaptchaReady) setRecaptchaReady(true);
+  }
 
   useEffect(() => {
     if (status === 'success' || status === 'error') {
@@ -99,11 +107,17 @@ export function Kontakt() {
           </ul>
         </div>
 
-        <form ref={formRef} onSubmit={onSubmit} className="space-y-4">
+        <form
+          ref={formRef}
+          onSubmit={onSubmit}
+          onFocus={activateRecaptcha}
+          onPointerDown={activateRecaptcha}
+          className="space-y-4"
+        >
           <Field name="name" label={t.kontakt.form.name} required />
           <Field name="email" label={t.kontakt.form.email} type="email" required />
           <Field name="message" label={t.kontakt.form.message} required textarea />
-          {env.recaptchaSiteKey && (
+          {env.recaptchaSiteKey && recaptchaReady && (
             <ReCAPTCHA
               key={captchaKey}
               sitekey={env.recaptchaSiteKey}
