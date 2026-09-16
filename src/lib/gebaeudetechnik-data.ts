@@ -1,12 +1,17 @@
 export type GtSection = { heading: string; text: string };
 
+export type GtServiceBlock = { title: string; text: string; image: string };
+
 export type GtCategory = {
   slug: string;
   title: string;
   tagline: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
   imageUrl: string;
   intro: string;
   features: string[];
+  serviceBlocks?: GtServiceBlock[];
   sections: GtSection[];
 };
 
@@ -15,6 +20,8 @@ export const GT_CATEGORIES: GtCategory[] = [
     slug: 'lueftung-klima',
     title: 'Lüftung & Klima',
     tagline: 'Frische Luft. Perfekte Raumtemperatur.',
+    heroTitle: 'Lüftung, Klima & Kälte – Planung, Lieferung, Montage und Service aus einer Hand.',
+    heroSubtitle: 'Individuelle Lösungen für Gewerbe, Industrie, Gastronomie und private Projekte.',
     imageUrl:
       'https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1600&q=80',
     intro:
@@ -27,10 +34,32 @@ export const GT_CATEGORIES: GtCategory[] = [
       'Hygienekontrollen nach SIA',
       'Energieoptimierung Lüftung',
     ],
+    serviceBlocks: [
+      {
+        title: 'Lüftungsanlagen – Neubau, Ersatz & Sanierung',
+        text: 'Planung und Realisierung neuer Lüftungsanlagen sowie Ersatz, Umbau, Erweiterung und Sanierung bestehender Anlagen – inklusive Lieferung, Montage, Inbetriebnahme und Einregulierung.',
+        image: '/klima.webp',
+      },
+      {
+        title: 'Klimaanlagen – Lieferung & Montage',
+        text: 'Split-, Multi-Split- und professionelle Klimasysteme für Gewerbe, Gastronomie, Industrie und private Anwendungen. Beratung, Auslegung, Lieferung, Installation und Inbetriebnahme aus einer Hand.',
+        image: '/klima.wohnung.webp',
+      },
+      {
+        title: 'Gastro- & Küchenlüftung',
+        text: 'Professionelle Zu- und Abluftlösungen sowie Küchenabluft für Restaurants, Hotels, Take-aways und Produktionsküchen. Neubau, Umbau, Ersatz, Optimierung und Service.',
+        image: '/klima.kuche.webp',
+      },
+      {
+        title: 'Kälte & Weinkellerkühlung',
+        text: 'Individuelle Kälte- und Klimatisierungslösungen für Gewerbe, Gastronomie, Industrie und private Weinlager und Weinkeller – von der Auslegung über die Lieferung bis zur fertigen Anlage.',
+        image: '/klima.wine.webp',
+      },
+    ],
     sections: [
       {
-        heading: 'Unser Ansatz',
-        text: 'Als unabhängige Experten und HLKS-Ingenieure betrachten wir die gesamte Gebäudetechnik als ein vernetztes Gesamtsystem. Wir verkaufen keine Standardgeräte – wir planen, optimieren und kontrollieren Ihre Anlagen, damit sie absolut störungsfrei, energieeffizient und mit minimalen Betriebskosten laufen.',
+        heading: 'Planung, Lieferung, Montage und Service aus einer Hand',
+        text: 'Die SANTEC GROUP plant, liefert und installiert individuelle Lüftungs-, Klima- und Kälteanlagen. Von der technischen Beratung und Auslegung über die Lieferung der Geräte und Komponenten bis zur fachgerechten Montage, Inbetriebnahme und Wartung erhalten Sie bei uns die komplette Lösung aus einer Hand.',
       },
       {
         heading: 'Planung und Konzeption',

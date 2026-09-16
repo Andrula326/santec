@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { CheckCircle2, ArrowLeft, Phone, Mail } from 'lucide-react';
+import { CheckCircle2, ArrowLeft, ArrowRight, Phone, Mail } from 'lucide-react';
 import { GT_CATEGORIES, getCategory } from '@/lib/gebaeudetechnik-data';
 import { company } from '@/lib/env';
+import { ServiceBlockGallery } from '@/components/gebaeudetechnik/ServiceBlockGallery';
 
 export function generateStaticParams() {
   return GT_CATEGORIES.map((c) => ({ slug: c.slug }));
@@ -68,11 +69,18 @@ export default function GebaeudetechnikDetailPage({
             Gebäudetechnik
           </span>
           <h1 className="mt-4 max-w-2xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
-            {cat.title}
+            {cat.heroTitle ?? cat.title}
           </h1>
           <p className="mt-4 max-w-xl text-base text-white/80 sm:text-lg">
-            {cat.tagline}
+            {cat.heroSubtitle ?? cat.tagline}
           </p>
+          <a
+            href={`tel:${company.phone.replace(/\s+/g, '')}`}
+            className="mt-8 inline-flex items-center gap-2 rounded-md bg-brand-green px-5 py-3 text-sm font-semibold text-bg transition hover:brightness-110"
+          >
+            Projekt unverbindlich anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
 
@@ -85,6 +93,8 @@ export default function GebaeudetechnikDetailPage({
               <p className="text-base leading-relaxed text-white/80 sm:text-lg">
                 {cat.intro}
               </p>
+
+              {cat.serviceBlocks && <ServiceBlockGallery blocks={cat.serviceBlocks} />}
 
               <div className="mt-12 space-y-10">
                 {cat.sections.map((s) => (
